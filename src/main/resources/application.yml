@@ -17,6 +17,17 @@ spring:
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:95206326}
 
+  cloud:
+    aws:
+      credentials:
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
+      region:
+        static: ap-northeast-2
+      s3:
+        bucket: ghostrip-bucket
+        exp-time: 300000  # presigned URL 유효시간 (ms) = 5분
+
 springdoc:
   api-docs:
     path: /api-docs
