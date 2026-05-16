@@ -37,6 +37,9 @@ dependencies {
     // AWS S3
     implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0'
 
+    // OkHttp (fal.ai 연동)
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
 }
 
 tasks.named('test') {
