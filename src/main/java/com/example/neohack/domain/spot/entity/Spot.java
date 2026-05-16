@@ -16,9 +16,9 @@ import java.util.List;
 public class Spot extends BaseTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "spot_id")
-    private String spotId;
+    private Long spotId;
 
     @Column(name = "name")
     private String name;

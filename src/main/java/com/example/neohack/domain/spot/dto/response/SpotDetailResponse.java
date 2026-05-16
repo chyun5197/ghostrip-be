@@ -12,7 +12,7 @@ import java.util.Optional;
 @Builder
 public class SpotDetailResponse {
 
-    private String spotId;
+    private Long spotId;
     private String name;
     private String description;
     private Double fearLevel;

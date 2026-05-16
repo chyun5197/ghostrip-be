@@ -14,9 +14,9 @@ import lombok.*;
 public class ConvertedSpotImage extends BaseTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "converted_spot_image_id")
-    private String convertedSpotImageId;
+    private Long convertedSpotImageId;
 
     @Column(name = "image_url")
     private String imageUrl;

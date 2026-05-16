@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class RelatedContentResponse {
-    private String relatedContentId;
+    private Long relatedContentId;
     private String title;
     private String thumbUrl;
 

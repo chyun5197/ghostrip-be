@@ -25,16 +25,16 @@ public class CommentController {
     @PostMapping("/{spotId}")
     @Operation(summary = "댓글 등록", description = "심령스팟에 댓글을 등록합니다.")
     public ResponseEntity<ApiResponse<CommentResponse>> registerComment(
-            @PathVariable String spotId,
+            @PathVariable Long spotId,
             @RequestBody CommentRequest request
     ) {
         return ResponseEntity.ok(ApiResponse.success(commentService.registerComment(spotId, request)));
     }
 
     @GetMapping("/{spotId}")
-    @Operation(summary = "댓글 목록 조회", description = "spotId에 해당하는 댓글 목록을 최신순으로 조회합니다.")
+    @Operation(summary = "댓글 목록 조회", description = "spotId에 해당하는 댓글 목록을 등록순으로 조회합니다.")
     public ResponseEntity<ApiResponse<List<CommentResponse>>> getCommentsBySpotId(
-            @PathVariable String spotId
+            @PathVariable Long spotId
     ) {
         return ResponseEntity.ok(ApiResponse.success(commentService.getCommentsBySpotId(spotId)));
     }

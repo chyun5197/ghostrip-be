@@ -24,7 +24,7 @@ public class CommentService {
     private final Random random = new Random();
 
     @Transactional
-    public CommentResponse registerComment(String spotId, CommentRequest request) {
+    public CommentResponse registerComment(Long spotId, CommentRequest request) {
         Spot spot = spotRepository.findById(spotId)
                 .orElseThrow(() -> new CustomException(ErrorCode.SPOT_NOT_FOUND));
 
@@ -38,7 +38,7 @@ public class CommentService {
     }
 
     @Transactional(readOnly = true)
-    public List<CommentResponse> getCommentsBySpotId(String spotId) {
+    public List<CommentResponse> getCommentsBySpotId(Long spotId) {
         return commentRepository.findBySpot_SpotIdOrderByCreatedAtAsc(spotId)
                 .stream()
                 .map(CommentResponse::from)

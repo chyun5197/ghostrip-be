@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class KakaoPlaceResponse {
-    private String kakaoPlaceId;
+    private Long kakaoPlaceId;
     private String address;
     private String placeName;
     private String kakaoPlaceUrl;

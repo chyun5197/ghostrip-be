@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface RelatedContentRepository extends JpaRepository<RelatedContent, String> {
-
-    List<RelatedContent> findBySpot_SpotId(String spotId);
+public interface RelatedContentRepository extends JpaRepository<RelatedContent, Long> {
+    List<RelatedContent> findBySpot_SpotId(Long spotId);
 }
