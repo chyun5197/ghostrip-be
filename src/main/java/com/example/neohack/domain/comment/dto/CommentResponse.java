@@ -13,6 +13,7 @@ public class CommentResponse {
     private String userName;
     private String content;
     private Double fearLevel;
+    private Double voteFearLevel;
     private LocalDateTime createdAt;
 
     public static CommentResponse from(Comment comment) {
@@ -21,6 +22,7 @@ public class CommentResponse {
                 .userName(comment.getUserName())
                 .content(comment.getContent())
                 .fearLevel(comment.getSpot().getFearLevel())
+                .voteFearLevel(comment.getVoteFearLevel())
                 .createdAt(comment.getCreatedAt())
                 .build();
     }
