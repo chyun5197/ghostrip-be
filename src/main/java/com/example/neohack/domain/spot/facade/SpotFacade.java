@@ -13,7 +13,7 @@ public class SpotFacade {
 
     public SpotDetailResponse getSpotDetail(String spotId) {
 
-//        Spot spot = spotService.getSpotDetail(spotId);
+        Spot spot = spotService.getSpotDetail(spotId);
         return null;
     }
 }
