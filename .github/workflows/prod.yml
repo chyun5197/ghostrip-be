@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  DOCKER_IMAGE: ghostream-be:latest
+  DOCKER_IMAGE: ghostrip-be:latest
 
 jobs:
   build-and-deploy:
