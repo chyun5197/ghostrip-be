@@ -17,7 +17,7 @@ public class SpotImage extends BaseTime {
     @Column(name = "spot_image_id")
     private String spotImageId;
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)

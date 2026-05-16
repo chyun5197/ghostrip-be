@@ -23,6 +23,9 @@ public class KakaoPlace extends BaseTime {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "place_name")
+    private String placeName;
+
     @Column(name = "road_address_name")
     private String roadAddress;
 

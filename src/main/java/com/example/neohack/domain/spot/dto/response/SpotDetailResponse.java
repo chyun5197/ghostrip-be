@@ -4,7 +4,9 @@ import com.example.neohack.domain.spot.entity.Spot;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @Builder
@@ -16,8 +18,8 @@ public class SpotDetailResponse {
     private Double fearLevel;
     private String visitWarning;
     private Long viewCount;
-    private List<SpotImageResponse> spotImageList;
 
+    private List<SpotImageResponse> spotImageList;
     private KakaoPlaceResponse kakaoPlace;
     private List<RelatedContentResponse> relatedContentList;
 
@@ -29,11 +31,13 @@ public class SpotDetailResponse {
                 .fearLevel(spot.getFearLevel())
                 .visitWarning(spot.getVisitWarning())
                 .viewCount(spot.getViewCount())
-                .spotImageList(spot.getSpotImages().stream()
+                .spotImageList(Optional.ofNullable(spot.getSpotImages())
+                        .orElse(Collections.emptyList()).stream()
                         .map(SpotImageResponse::from)
                         .toList())
-                .kakaoPlace(KakaoPlaceResponse.from(spot.getKakaoPlace()))
-                .relatedContentList(spot.getRelatedContents().stream()
+                .kakaoPlace(spot.getKakaoPlace() != null ? KakaoPlaceResponse.from(spot.getKakaoPlace()) : null)
+                .relatedContentList(Optional.ofNullable(spot.getRelatedContents())
+                        .orElse(Collections.emptyList()).stream()
                         .map(RelatedContentResponse::from)
                         .toList())
                 .build();

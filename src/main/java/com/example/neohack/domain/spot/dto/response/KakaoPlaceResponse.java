@@ -7,6 +7,7 @@ import lombok.Getter;
 public class KakaoPlaceResponse {
     private String kakaoPlaceId;
     private String address;
+    private String placeName;
     private String roadAddress;
     private Double latitude;
     private Double longitude;
@@ -18,6 +19,7 @@ public class KakaoPlaceResponse {
         KakaoPlaceResponse response = new KakaoPlaceResponse();
         response.kakaoPlaceId = kakaoPlace.getKakaoPlaceId();
         response.address = kakaoPlace.getAddress();
+        response.placeName = kakaoPlace.getPlaceName();
         response.roadAddress = kakaoPlace.getRoadAddress();
         response.latitude = kakaoPlace.getLatitude();
         response.longitude = kakaoPlace.getLongitude();
