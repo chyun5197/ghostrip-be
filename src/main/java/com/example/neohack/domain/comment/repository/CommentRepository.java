@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CommentRepository extends JpaRepository<Comment, String> {
-    List<Comment> findBySpot_SpotIdOrderByCreatedAtAsc(String spotId);
+public interface CommentRepository extends JpaRepository<Comment, Long> {
+    List<Comment> findBySpot_SpotIdOrderByCreatedAtAsc(Long spotId);
     boolean existsByUserName(String userName);
 }

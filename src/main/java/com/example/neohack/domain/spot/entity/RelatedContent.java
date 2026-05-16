@@ -13,9 +13,9 @@ import lombok.*;
 public class RelatedContent extends BaseTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "related_content_id")
-    private String relatedContentId;
+    private Long relatedContentId;
 
     @Column(name = "title")
     private String title;

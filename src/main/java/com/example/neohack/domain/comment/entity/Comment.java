@@ -15,9 +15,9 @@ import lombok.*;
 public class Comment extends BaseTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
-    private String commentId;
+    private Long commentId;
 
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;

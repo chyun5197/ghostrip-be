@@ -13,9 +13,9 @@ import lombok.*;
 public class KakaoPlace extends BaseTime {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "kakao_place_id")
-    private String kakaoPlaceId;
+    private Long kakaoPlaceId;
 
     @Column(name = "kakao_place_url")
     private String kakaoPlaceUrl;
