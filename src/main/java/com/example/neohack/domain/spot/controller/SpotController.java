@@ -23,6 +23,12 @@ public class SpotController {
 
     private final SpotFacade spotFacade;
 
+    @GetMapping("/best")
+    @Operation(summary = "베스트 심령스팟 조회", description = "viewCount 기준 상위 10개 심령스팟을 반환합니다.")
+    public ResponseEntity<ApiResponse<List<SpotDetailResponse>>> getBestSpots() {
+        return ResponseEntity.ok(ApiResponse.success(spotFacade.getBestSpots()));
+    }
+
     @GetMapping("/{spotId}")
     @Operation(summary = "심령스팟 상세 정보 조회", description = "spotId로 심령스팟 상세 정보를 조회합니다. 조회 시 viewCount가 1 증가합니다.")
     public ResponseEntity<ApiResponse<SpotDetailResponse>> getSpotDetail(

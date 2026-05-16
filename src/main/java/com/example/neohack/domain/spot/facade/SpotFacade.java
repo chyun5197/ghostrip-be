@@ -15,6 +15,10 @@ import java.util.List;
 public class SpotFacade {
     private final SpotService spotService;
 
+    public List<SpotDetailResponse> getBestSpots() {
+        return spotService.getBestSpots();
+    }
+
     public SpotDetailResponse getSpotDetail(Long spotId) {
         Spot spot = spotService.getSpotDetail(spotId);
         return SpotDetailResponse.from(spot);
