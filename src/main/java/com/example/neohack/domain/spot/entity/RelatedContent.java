@@ -15,7 +15,7 @@ public class RelatedContent extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "related_content_id")
-    private Long relatedContentId;
+    private String relatedContentId;
 
     @Column(name = "title")
     private String title;

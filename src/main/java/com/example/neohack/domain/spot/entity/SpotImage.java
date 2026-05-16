@@ -15,9 +15,9 @@ public class SpotImage extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "spot_image_id")
-    private Long spotImageId;
+    private String spotImageId;
 
-    @Column(name = "image_url")
+    @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)

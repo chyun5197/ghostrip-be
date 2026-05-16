@@ -1,6 +1,6 @@
 package com.example.neohack.domain.spot.facade;
 
-import com.example.neohack.domain.spot.dto.SpotDetailResponse;
+import com.example.neohack.domain.spot.dto.response.SpotDetailResponse;
 import com.example.neohack.domain.spot.entity.Spot;
 import com.example.neohack.domain.spot.service.SpotService;
 import lombok.RequiredArgsConstructor;

@@ -1,12 +1,11 @@
-package com.example.neohack.domain.spot.dto;
+package com.example.neohack.domain.spot.dto.response;
 
 import com.example.neohack.domain.spot.entity.RelatedContent;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 public class RelatedContentResponse {
-    private Long relatedContentId;
+    private String relatedContentId;
     private String title;
     private String thumbUrl;
 

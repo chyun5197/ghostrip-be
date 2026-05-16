@@ -15,7 +15,7 @@ public class KakaoPlace extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "kakao_place_id")
-    private Long kakaoPlaceId;
+    private String kakaoPlaceId;
 
     @Column(name = "kakao_place_url")
     private String kakaoPlaceUrl;
@@ -23,20 +23,8 @@ public class KakaoPlace extends BaseTime {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "road_address_name")
-    private String roadAddress;
-
-    @Column(name = "latitude")
-    private Double latitude;
-
-    @Column(name = "longitude")
-    private Double longitude;
-
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "category_name")
-    private String categoryName;
+    @Column(name = "place_name")
+    private String placeName;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "spot_id")

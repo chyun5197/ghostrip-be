@@ -16,7 +16,7 @@ public class ConvertedSpotImage extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "converted_spot_image_id")
-    private Long convertedSpotImageId;
+    private String convertedSpotImageId;
 
     @Column(name = "image_url")
     private String imageUrl;
