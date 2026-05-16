@@ -1,4 +1,4 @@
-package com.example.neohack.domain.comment;
+package com.example.neohack.domain.comment.entity;
 
 import com.example.neohack.domain.member.Member;
 import com.example.neohack.domain.spot.entity.Spot;
@@ -21,6 +21,8 @@ public class Comment extends BaseTime {
 
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;
+
+    private String userName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "spot_id")

@@ -26,21 +26,6 @@ public class KakaoPlace extends BaseTime {
     @Column(name = "place_name")
     private String placeName;
 
-    @Column(name = "road_address_name")
-    private String roadAddress;
-
-    @Column(name = "latitude")
-    private Double latitude;
-
-    @Column(name = "longitude")
-    private Double longitude;
-
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "category_name")
-    private String categoryName;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "spot_id")
     private Spot spot;
