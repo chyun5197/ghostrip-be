@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,10 +24,10 @@ public class CommentController {
     private final CommentService commentService;
 
     @PostMapping("/{spotId}")
-    @Operation(summary = "댓글 등록", description = "심령스팟에 댓글을 등록합니다.")
+    @Operation(summary = "댓글 등록", description = "심령스팟에 댓글을 등록합니다. 공포 지수는 0.0~5.0 사이만 가능, 그 외는 예외")
     public ResponseEntity<ApiResponse<CommentResponse>> registerComment(
             @PathVariable Long spotId,
-            @RequestBody CommentRequest request
+            @Valid @RequestBody CommentRequest request
     ) {
         return ResponseEntity.ok(ApiResponse.success(commentService.registerComment(spotId, request)));
     }

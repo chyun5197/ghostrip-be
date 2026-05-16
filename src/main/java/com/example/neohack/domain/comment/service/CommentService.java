@@ -34,6 +34,10 @@ public class CommentService {
                 .spot(spot)
                 .build();
 
+        if (request.getFearLevel() != null) {
+            spot.updateFearLevel(request.getFearLevel());
+        }
+
         return CommentResponse.from(commentRepository.save(comment));
     }
 
