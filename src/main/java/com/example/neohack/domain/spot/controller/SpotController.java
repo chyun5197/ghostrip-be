@@ -1,8 +1,7 @@
 package com.example.neohack.domain.spot.controller;
 
-import com.example.neohack.domain.spot.dto.SpotDetailResponse;
+import com.example.neohack.domain.spot.dto.response.SpotDetailResponse;
 import com.example.neohack.domain.spot.facade.SpotFacade;
-import com.example.neohack.domain.spot.service.SpotService;
 import com.example.neohack.global.dto.response.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

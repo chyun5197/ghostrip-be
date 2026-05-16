@@ -1,7 +1,6 @@
-package com.example.neohack.domain.spot.dto;
+package com.example.neohack.domain.spot.dto.response;
 
 import com.example.neohack.domain.spot.entity.KakaoPlace;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter
