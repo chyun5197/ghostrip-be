@@ -1,6 +1,8 @@
 package com.example.neohack.domain.spot.controller;
 
+import com.example.neohack.domain.spot.dto.request.SpotImageRequest;
 import com.example.neohack.domain.spot.dto.response.SpotDetailResponse;
+import com.example.neohack.domain.spot.dto.response.SpotImageResponse;
 import com.example.neohack.domain.spot.facade.SpotFacade;
 import com.example.neohack.global.dto.response.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/spot")
@@ -25,5 +29,14 @@ public class SpotController {
             @PathVariable String spotId
     ) {
         return ResponseEntity.ok(ApiResponse.success(spotFacade.getSpotDetail(spotId)));
+    }
+
+    @PostMapping("/{spotId}/image")
+    @Operation(summary = "심령스팟 이미지 등록", description = "S3 업로드 완료 후 imageUrl 리스트를 전달하면 spotImage에 저장합니다.")
+    public ResponseEntity<ApiResponse<List<SpotImageResponse>>> addSpotImages(
+            @PathVariable String spotId,
+            @RequestBody SpotImageRequest request
+    ) {
+        return ResponseEntity.ok(ApiResponse.success(spotFacade.addSpotImages(spotId, request)));
     }
 }
