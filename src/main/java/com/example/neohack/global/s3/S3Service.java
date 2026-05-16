@@ -4,7 +4,9 @@ import com.example.neohack.global.s3.dto.PresignedUrlResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedPutObjectRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PutObjectPresignRequest;
@@ -43,6 +45,18 @@ public class S3Service {
         String presignedUrl = presignedRequest.url().toString();
         String imageUrl = BASE_URL.formatted(bucket, key);
         return new PresignedUrlResponse(presignedUrl, imageUrl);
+    }
+
+    public String uploadBytes(String key, byte[] data, String contentType) {
+        s3Client.putObject(
+                PutObjectRequest.builder()
+                        .bucket(bucket)
+                        .key(key)
+                        .contentType(contentType)
+                        .build(),
+                RequestBody.fromBytes(data)
+        );
+        return BASE_URL.formatted(bucket, key);
     }
 
     public void delete(String imageUrl) {
