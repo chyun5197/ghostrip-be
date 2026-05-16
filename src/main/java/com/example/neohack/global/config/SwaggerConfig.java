@@ -11,8 +11,8 @@ public class SwaggerConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Ghostream API 명세서")
+                        .title("Ghostrip API 명세서")
                         .version("v1.0")
-                        .description("Ghostream API 명세서입니다."));
+                        .description("Ghostrip API 명세서입니다."));
     }
 }
