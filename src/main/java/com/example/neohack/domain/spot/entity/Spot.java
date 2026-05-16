@@ -29,6 +29,9 @@ public class Spot extends BaseTime {
     @Column(name = "fear_level")
     private Double fearLevel;
 
+    @Builder.Default
+    private Integer fearLevelVoteCount = 0;
+
     @Column(name = "visit_warning")
     private String visitWarning;
 
@@ -49,5 +52,12 @@ public class Spot extends BaseTime {
 
     public void increaseViewCount() {
         this.viewCount++;
+    }
+
+    public void updateFearLevel(Double newFearLevel) {
+        this.fearLevel = (this.fearLevel == null)
+                ? newFearLevel
+                : (this.fearLevel * this.fearLevelVoteCount + newFearLevel) / (this.fearLevelVoteCount + 1);
+        this.fearLevelVoteCount++;
     }
 }

@@ -12,6 +12,7 @@ public class CommentResponse {
     private Long commentId;
     private String userName;
     private String content;
+    private Double fearLevel;
     private LocalDateTime createdAt;
 
     public static CommentResponse from(Comment comment) {
@@ -19,6 +20,7 @@ public class CommentResponse {
                 .commentId(comment.getCommentId())
                 .userName(comment.getUserName())
                 .content(comment.getContent())
+                .fearLevel(comment.getSpot().getFearLevel())
                 .createdAt(comment.getCreatedAt())
                 .build();
     }
