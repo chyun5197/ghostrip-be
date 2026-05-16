@@ -22,7 +22,7 @@ public class SpotImageConvertController {
     private final SpotFacade spotFacade;
 
     @PostMapping("/human-bg")
-    @Operation(summary = "심령스팟 합성 이미지 생성", description = "인물 사진 URL과 심령스팟 배경 URL을 AI로 합성합니다.")
+    @Operation(summary = "심령스팟 합성 이미지 생성(제대로 안됨)", description = "인물 사진 URL과 심령스팟 배경 URL을 AI로 합성합니다.")
     public ResponseEntity<ApiResponse<ImageConvertResponse>> convertImage(
             @RequestBody ImageConvertRequest request
     ) throws Exception {
