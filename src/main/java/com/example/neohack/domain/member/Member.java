@@ -13,7 +13,7 @@ public class Member extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "member_id")
-    private Long memberId;
+    private String memberId;
 
     @Column(name = "name")
     private String name;

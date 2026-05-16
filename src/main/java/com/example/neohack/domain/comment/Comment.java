@@ -17,7 +17,7 @@ public class Comment extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "comment_id")
-    private Long commentId;
+    private String commentId;
 
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;

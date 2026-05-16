@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 public class SpotDetailResponse {
 
-    private Long spotId;
+    private String spotId;
     private String name;
     private String description;
     private Double fearLevel;
