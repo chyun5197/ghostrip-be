@@ -15,7 +15,7 @@ public class KakaoPlace extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "kakao_place_id")
-    private String kakaoPlaceId;
+    private Long kakaoPlaceId;
 
     @Column(name = "kakao_place_url")
     private String kakaoPlaceUrl;
@@ -24,7 +24,7 @@ public class KakaoPlace extends BaseTime {
     private String address;
 
     @Column(name = "road_address_name")
-    private String roadAddressName;
+    private String roadAddress;
 
     @Column(name = "latitude")
     private Double latitude;

@@ -19,26 +19,65 @@ public class SpotDetailResponse {
     private Double fearLevel;
     private String visitWarning;
     private Long viewCount;
-    private List<String> imageUrls;
+    private List<String> imageUrlList;
 
-//    private KakaoPlace kakaoPlace;
-//    private List<RelatedContentInfo> relatedContents;
+    private KakaoPlaceResponse kakaoPlace;
+    private List<RelatedContentResponse> relatedContentList;
 
-//    public static SpotDetailResponse from(Spot spot) {
-//        return SpotDetailResponse.builder()
-//                .spotId(spot.getSpotId())
-//                .name(spot.getName())
-//                .description(spot.getDescription())
-//                .fearLevel(spot.getFearLevel())
-//                .visitWarning(spot.getVisitWarning())
-//                .viewCount(spot.getViewCount())
-////                .kakaoPlace(KakaoPlaceInfo.from(spot.getKakaoPlace()))
-//                .imageUrls(spot.getSpotImages().stream()
-//                        .map(SpotImage::getImageUrl)
-//                        .toList())
-////                .relatedContents(spot.getRelatedContents().stream()
-////                        .map(RelatedContentInfo::from)
-//                        .toList())
-//                .build();
-//    }
+    @Getter
+    @Builder
+    public static class KakaoPlaceResponse {
+        private String address;
+        private String roadAddressName;
+        private Double latitude;
+        private Double longitude;
+        private String phone;
+        private String kakaoPlaceUrl;
+        private String categoryName;
+
+        public static KakaoPlaceResponse from(KakaoPlace kakaoPlace) {
+            if (kakaoPlace == null) return null;
+            return KakaoPlaceResponse.builder()
+                    .address(kakaoPlace.getAddress())
+                    .roadAddressName(kakaoPlace.getRoadAddressName())
+                    .latitude(kakaoPlace.getLatitude())
+                    .longitude(kakaoPlace.getLongitude())
+                    .phone(kakaoPlace.getPhone())
+                    .kakaoPlaceUrl(kakaoPlace.getKakaoPlaceUrl())
+                    .categoryName(kakaoPlace.getCategoryName())
+                    .build();
+        }
+    }
+
+    @Getter
+    @Builder
+    public static class RelatedContentResponse {
+        private String title;
+        private String thumbUrl;
+
+        public static RelatedContentResponse from(RelatedContent content) {
+            return RelatedContentResponse.builder()
+                    .title(content.getTitle())
+                    .thumbUrl(content.getThumbUrl())
+                    .build();
+        }
+    }
+
+    public static SpotDetailResponse from(Spot spot) {
+        return SpotDetailResponse.builder()
+                .spotId(spot.getSpotId())
+                .name(spot.getName())
+                .description(spot.getDescription())
+                .fearLevel(spot.getFearLevel())
+                .visitWarning(spot.getVisitWarning())
+                .viewCount(spot.getViewCount())
+                .imageUrlList(spot.getSpotImages().stream()
+                        .map(SpotImage::getImageUrl)
+                        .toList())
+                .kakaoPlace(KakaoPlaceResponse.from(spot.getKakaoPlace()))
+                .relatedContentList(spot.getRelatedContents().stream()
+                        .map(RelatedContentResponse::from)
+                        .toList())
+                .build();
+    }
 }

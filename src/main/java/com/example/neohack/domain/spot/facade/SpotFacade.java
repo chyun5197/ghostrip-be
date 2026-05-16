@@ -12,8 +12,7 @@ public class SpotFacade {
     private final SpotService spotService;
 
     public SpotDetailResponse getSpotDetail(String spotId) {
-
         Spot spot = spotService.getSpotDetail(spotId);
-        return null;
+        return SpotDetailResponse.from(spot);
     }
 }

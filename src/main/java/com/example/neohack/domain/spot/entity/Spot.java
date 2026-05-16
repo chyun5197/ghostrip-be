@@ -18,7 +18,7 @@ public class Spot extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "spot_id")
-    private String spotId;
+    private Long spotId;
 
     @Column(name = "name")
     private String name;

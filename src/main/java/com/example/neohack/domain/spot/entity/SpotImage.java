@@ -15,7 +15,7 @@ public class SpotImage extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "spot_image_id")
-    private String spotImageId;
+    private Long spotImageId;
 
     @Column(name = "image_url")
     private String imageUrl;
