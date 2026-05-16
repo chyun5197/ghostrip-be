@@ -20,8 +20,7 @@ public class RelatedContent extends BaseTime {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "thumb_url")
-    private String thumbUrl;
+    private String youtubeUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "spot_id")
