@@ -15,7 +15,7 @@ public class SwaggerConfig {
                         .title("Ghostrip API 명세서")
                         .version("v1.0")
                         .description("Ghostrip API 명세서입니다."))
-                .addServersItem(new Server().url("https://neo-hack.watch-box.net"))
-                .addServersItem(new Server().url("http://localhost:8080"));
+                .addServersItem(new Server().url("http://localhost:8080"))
+                .addServersItem(new Server().url("https://neo-hack.watch-box.net"));
     }
 }
