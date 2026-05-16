@@ -24,14 +24,17 @@ public class HealthCheck {
     private final DataSource dataSource;
 
     @GetMapping
-    @Operation(summary = "서버 및 DB 상태 확인")
+    @Operation(summary = "서버 상태 확인")
     public ResponseEntity<Map<String, String>> healthCheck() {
-        Map<String, String> status = new LinkedHashMap<>();
-        status.put("server", "Active");
-        status.put("db", checkDatabase());
+        return ResponseEntity.ok(Map.of("server", "Active"));
+    }
 
-        boolean allUp = status.values().stream().allMatch("Active"::equals);
-        return allUp ? ResponseEntity.ok(status) : ResponseEntity.status(503).body(status);
+    @GetMapping("/db")
+    @Operation(summary = "DB 상태 확인")
+    public ResponseEntity<Map<String, String>> dbHealthCheck() {
+        String dbStatus = checkDatabase();
+        Map<String, String> status = Map.of("db", dbStatus);
+        return "UP".equals(dbStatus) ? ResponseEntity.ok(status) : ResponseEntity.status(503).body(status);
     }
 
     private String checkDatabase() {
