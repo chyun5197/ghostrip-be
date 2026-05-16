@@ -6,6 +6,7 @@ import lombok.Getter;
 
 @Getter
 public class KakaoPlaceResponse {
+    private Long kakaoPlaceId;
     private String address;
     private String roadAddress;
     private Double latitude;
@@ -16,6 +17,7 @@ public class KakaoPlaceResponse {
 
     public static KakaoPlaceResponse from(KakaoPlace kakaoPlace) {
         KakaoPlaceResponse response = new KakaoPlaceResponse();
+        response.kakaoPlaceId = kakaoPlace.getKakaoPlaceId();
         response.address = kakaoPlace.getAddress();
         response.roadAddress = kakaoPlace.getRoadAddress();
         response.latitude = kakaoPlace.getLatitude();

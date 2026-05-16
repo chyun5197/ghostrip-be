@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class SpotDetailResponse {
 
-    private String spotId;
+    private Long spotId;
     private String name;
     private String description;
     private Double fearLevel;
@@ -23,45 +23,6 @@ public class SpotDetailResponse {
 
     private KakaoPlaceResponse kakaoPlace;
     private List<RelatedContentResponse> relatedContentList;
-
-    @Getter
-    @Builder
-    public static class KakaoPlaceResponse {
-        private String address;
-        private String roadAddressName;
-        private Double latitude;
-        private Double longitude;
-        private String phone;
-        private String kakaoPlaceUrl;
-        private String categoryName;
-
-        public static KakaoPlaceResponse from(KakaoPlace kakaoPlace) {
-            if (kakaoPlace == null) return null;
-            return KakaoPlaceResponse.builder()
-                    .address(kakaoPlace.getAddress())
-                    .roadAddressName(kakaoPlace.getRoadAddressName())
-                    .latitude(kakaoPlace.getLatitude())
-                    .longitude(kakaoPlace.getLongitude())
-                    .phone(kakaoPlace.getPhone())
-                    .kakaoPlaceUrl(kakaoPlace.getKakaoPlaceUrl())
-                    .categoryName(kakaoPlace.getCategoryName())
-                    .build();
-        }
-    }
-
-    @Getter
-    @Builder
-    public static class RelatedContentResponse {
-        private String title;
-        private String thumbUrl;
-
-        public static RelatedContentResponse from(RelatedContent content) {
-            return RelatedContentResponse.builder()
-                    .title(content.getTitle())
-                    .thumbUrl(content.getThumbUrl())
-                    .build();
-        }
-    }
 
     public static SpotDetailResponse from(Spot spot) {
         return SpotDetailResponse.builder()
