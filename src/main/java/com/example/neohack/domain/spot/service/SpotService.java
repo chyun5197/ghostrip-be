@@ -22,13 +22,13 @@ public class SpotService {
     private final SpotImageRepository spotImageRepository;
 
     @Transactional(readOnly = true)
-    public Spot getSpotDetail(String spotId) {
+    public Spot getSpotDetail(Long spotId) {
         return spotRepository.findById(spotId)
                 .orElseThrow(() -> new CustomException(ErrorCode.SPOT_NOT_FOUND));
     }
 
     @Transactional
-    public List<SpotImageResponse> addSpotImages(String spotId, SpotImageRequest request) {
+    public List<SpotImageResponse> addSpotImages(Long spotId, SpotImageRequest request) {
         Spot spot = spotRepository.findById(spotId)
                 .orElseThrow(() -> new CustomException(ErrorCode.SPOT_NOT_FOUND));
 

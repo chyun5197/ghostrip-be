@@ -8,7 +8,7 @@ import lombok.Getter;
 @Builder
 public class SpotImageResponse {
 
-    private String spotImageId;
+    private Long spotImageId;
     private String imageUrl;
 
     public static SpotImageResponse from(SpotImage spotImage) {

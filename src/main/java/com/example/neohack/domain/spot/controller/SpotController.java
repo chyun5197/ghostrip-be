@@ -26,7 +26,7 @@ public class SpotController {
     @GetMapping("/{spotId}")
     @Operation(summary = "심령스팟 상세 정보 조회", description = "spotId로 심령스팟 상세 정보를 조회합니다. 조회 시 viewCount가 1 증가합니다.")
     public ResponseEntity<ApiResponse<SpotDetailResponse>> getSpotDetail(
-            @PathVariable String spotId
+            @PathVariable Long spotId
     ) {
         return ResponseEntity.ok(ApiResponse.success(spotFacade.getSpotDetail(spotId)));
     }
@@ -34,7 +34,7 @@ public class SpotController {
     @PostMapping("/{spotId}/image")
     @Operation(summary = "심령스팟 이미지 등록", description = "S3 업로드 완료 후 imageUrl 리스트를 전달하면 spotImage에 저장합니다.")
     public ResponseEntity<ApiResponse<List<SpotImageResponse>>> addSpotImages(
-            @PathVariable String spotId,
+            @PathVariable Long spotId,
             @RequestBody SpotImageRequest request
     ) {
         return ResponseEntity.ok(ApiResponse.success(spotFacade.addSpotImages(spotId, request)));

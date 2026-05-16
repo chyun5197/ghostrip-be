@@ -7,9 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ConvertedSpotImageRepository extends JpaRepository<ConvertedSpotImage, String> {
-
-    List<ConvertedSpotImage> findBySpot_SpotId(String spotId);
-
-    List<ConvertedSpotImage> findByMember_MemberId(String memberId);
+public interface ConvertedSpotImageRepository extends JpaRepository<ConvertedSpotImage, Long> {
+    List<ConvertedSpotImage> findBySpot_SpotId(Long spotId);
+    List<ConvertedSpotImage> findByMember_MemberId(Long memberId);
 }

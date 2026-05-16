@@ -15,12 +15,12 @@ import java.util.List;
 public class SpotFacade {
     private final SpotService spotService;
 
-    public SpotDetailResponse getSpotDetail(String spotId) {
+    public SpotDetailResponse getSpotDetail(Long spotId) {
         Spot spot = spotService.getSpotDetail(spotId);
         return SpotDetailResponse.from(spot);
     }
 
-    public List<SpotImageResponse> addSpotImages(String spotId, SpotImageRequest request) {
+    public List<SpotImageResponse> addSpotImages(Long spotId, SpotImageRequest request) {
         return spotService.addSpotImages(spotId, request);
     }
 }
