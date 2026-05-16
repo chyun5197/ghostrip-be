@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/spot/convert/image")
 @RequiredArgsConstructor
 @Slf4j
-@Tag(name = "Spot Convert API", description = "심령스팟 관련 API")
+@Tag(name = "Spot Image Convert API", description = "심령스팟 관련 API")
 public class SpotImageConvertController {
 
     private final SpotFacade spotFacade;
