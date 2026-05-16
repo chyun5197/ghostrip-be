@@ -24,8 +24,8 @@ public class CommentService {
     private final Random random = new Random();
 
     @Transactional
-    public CommentResponse registerComment(CommentRequest request) {
-        Spot spot = spotRepository.findById(request.getSpotId())
+    public CommentResponse registerComment(String spotId, CommentRequest request) {
+        Spot spot = spotRepository.findById(spotId)
                 .orElseThrow(() -> new CustomException(ErrorCode.SPOT_NOT_FOUND));
 
         Comment comment = Comment.builder()

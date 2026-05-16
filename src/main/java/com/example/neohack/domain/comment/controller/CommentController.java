@@ -22,12 +22,13 @@ public class CommentController {
 
     private final CommentService commentService;
 
-    @PostMapping
+    @PostMapping("/{spotId}")
     @Operation(summary = "댓글 등록", description = "심령스팟에 댓글을 등록합니다.")
     public ResponseEntity<ApiResponse<CommentResponse>> registerComment(
+            @PathVariable String spotId,
             @RequestBody CommentRequest request
     ) {
-        return ResponseEntity.ok(ApiResponse.success(commentService.registerComment(request)));
+        return ResponseEntity.ok(ApiResponse.success(commentService.registerComment(spotId, request)));
     }
 
     @GetMapping("/{spotId}")
