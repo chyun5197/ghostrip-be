@@ -1,5 +1,6 @@
 package com.example.neohack.global.dto.response;
 
+import com.example.neohack.global.dto.response.exception.ErrorDetail;
 import lombok.Builder;
 import lombok.Getter;
 

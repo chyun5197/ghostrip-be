@@ -1,4 +1,4 @@
-package com.example.neohack.global.dto.response;
+package com.example.neohack.global.dto.response.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

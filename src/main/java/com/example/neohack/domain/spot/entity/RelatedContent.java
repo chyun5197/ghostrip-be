@@ -1,0 +1,29 @@
+package com.example.neohack.domain.spot.entity;
+
+import com.example.neohack.global.entity.BaseTime;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "related_content")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
+public class RelatedContent extends BaseTime {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "related_content_id")
+    private String relatedContentId;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "thumb_url")
+    private String thumbUrl;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "spot_id")
+    private Spot spot;
+}

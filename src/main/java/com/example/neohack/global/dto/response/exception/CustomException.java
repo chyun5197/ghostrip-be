@@ -1,4 +1,4 @@
-package com.example.neohack.global.dto.response;
+package com.example.neohack.global.dto.response.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

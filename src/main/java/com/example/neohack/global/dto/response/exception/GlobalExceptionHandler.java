@@ -1,5 +1,6 @@
-package com.example.neohack.global.dto.response;
+package com.example.neohack.global.dto.response.exception;
 
+import com.example.neohack.global.dto.response.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

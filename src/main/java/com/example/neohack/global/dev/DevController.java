@@ -1,7 +1,7 @@
 package com.example.neohack.global.dev;
 
 import com.example.neohack.global.dto.response.ApiResponse;
-import com.example.neohack.global.dto.response.ErrorDetail;
+import com.example.neohack.global.dto.response.exception.ErrorDetail;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
