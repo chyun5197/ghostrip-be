@@ -24,6 +24,8 @@ public class Comment extends BaseTime {
 
     private String userName;
 
+    private Double voteFearLevel;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "spot_id")
     private Spot spot;
