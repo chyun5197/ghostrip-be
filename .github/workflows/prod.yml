@@ -38,5 +38,5 @@ jobs:
       - name: Deploy with Docker Compose
         working-directory: /home/ubuntu/app
         run: |
-          docker compose up -d --no-deps ghostream-be
+          docker compose up -d --no-deps ghostrip-be
           docker image prune -f
