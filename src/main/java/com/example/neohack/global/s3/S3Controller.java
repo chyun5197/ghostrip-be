@@ -41,6 +41,7 @@ public class S3Controller {
     @DeleteMapping
     @Operation(summary = "이미지 삭제", description = "imageUrl로 S3에서 이미지를 삭제합니다.")
     public ResponseEntity<ApiResponse<Void>> delete(@RequestParam String imageUrl) {
+        ImageUrlValidator.validate(imageUrl);
         s3Service.delete(imageUrl);
         return ResponseEntity.ok(ApiResponse.success());
     }
